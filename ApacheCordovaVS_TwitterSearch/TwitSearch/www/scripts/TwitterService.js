@@ -1,8 +1,8 @@
 ﻿function twitter() {
     "use strict";
     var bearerToken ="";
-    var TWITTER_CLIENT_KEY = "jmyVS4LBTnrIv7aRDmpXBB9Qo";
-    var TWITTER_CLIENT_SECRET = "gesIjG7BmPJfldS8TeHQ6U7dnpZnLesSdbgY3WCXbUSlAcqE0C";
+    var TWITTER_CLIENT_KEY = "";
+    var TWITTER_CLIENT_SECRET = "";
 
     function doSearch(searchTerm, success, error) {
         var searchReq = new XMLHttpRequest();
@@ -48,6 +48,11 @@
     };
 
     function login(success, error) {
+
+        if (TWITTER_CLIENT_KEY === "" || TWITTER_CLIENT_SECRET === "") {
+            error("Set the twitter key and secret in the TwitterService.js file to proceed. You'll need a Twitter Application setup to get these.");
+            return;
+        }
         var req = new XMLHttpRequest();
         req.onreadystatechange = function () {
             if (req.readyState == 4) {
