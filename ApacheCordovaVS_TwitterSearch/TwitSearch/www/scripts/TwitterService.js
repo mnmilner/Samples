@@ -1,6 +1,7 @@
 ﻿function twitter() {
     "use strict";
-    var bearerToken ="";
+    var bearerToken = "";
+    //add your keys here from your twitter application
     var TWITTER_CLIENT_KEY = "";
     var TWITTER_CLIENT_SECRET = "";
 
