@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TwitSearch</title>
+
+    <!-- TwitSearch references -->
+    <link href="scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Search Twitter!</p>
+    <div class="container">
+        <form>
+            <fieldset>
+                <label for="searchTerm">Search term:</label>
+                <input type="text" id="searchTerm" />
+            </fieldset>
+            <input class="btn btn-primary" type="button" onclick="searchTwitter()" value="Search" />
+            <input class="btn btn-info" type="button" onclick="takePicture()" value="Smile!" />
+        </form>
+        <img id="audienceSmiling" />
+        <h2>Search results</h2>
+        <dl id="results"></dl>
+    </div>
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/TwitterService.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+.vs/
 
 # Build results
 [Dd]ebug/
@@ -182,6 +183,12 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# =========================
+# Apache Cordova Directories
+# =========================
+platforms/
+plugins/
 
 # =========================
 # Operating System Files

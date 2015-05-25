@@ -1,0 +1,10 @@
+{
+   "name": "TwitterSearch",
+   "version": "1.0",
+   "description": "Sample Cordova application for Iowa Code Camp",
+   "dependencies": {
+    "angular": "~1.2.25",
+    "angular-resource": "~1.2.25",
+    "bootstrap": "~3.2.0"
+    }
+}

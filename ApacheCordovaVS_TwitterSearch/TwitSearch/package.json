@@ -1,0 +1,11 @@
+{
+  "name": "TwitterSearch",
+  "version": "0.0.1",
+  "description": "ICC Cordova App.",
+  "repository": {},
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4",
+    "bower": "^1.4.1"
+  }
+}
