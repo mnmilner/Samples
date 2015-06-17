@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LegoManager.AddLegoSetView">
+  <ContentPage.Content>
+    
+  
+  <TableView Intent="Form">
+    <TableView.Root>
+      <TableRoot Title="Add new set">
+        <TableSection Title="Set Details">
+          <EntryCell Label="Number:" Text="{Binding SetToAdd.LegoProductNumber}" Keyboard="Numeric" ></EntryCell>
+          <EntryCell Label="Name:" Text="{Binding SetToAdd.Name}" ></EntryCell>
+          <EntryCell Label="# Pieces:" Keyboard="Numeric" Text="{Binding SetToAdd.NumberOfPieces}" ></EntryCell>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Release Date:"></Label>
+                <DatePicker Date="{Binding SetToAdd.ReleaseDate}" MinimumDate="1/1/2004"></DatePicker>
+              </StackLayout>
+              
+            </ViewCell.View>
+          </ViewCell>
+        </TableSection>
+        <TableSection Title="Personal Details">
+          <SwitchCell Text="Owned" On="{Binding SetToAdd.Owned}"></SwitchCell>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Build Date:"></Label>
+                <DatePicker Date="{Binding SetToAdd.BuildDate}" MinimumDate="1/1/2004"></DatePicker>
+              </StackLayout>
+
+            </ViewCell.View>
+          </ViewCell>
+        </TableSection>
+      </TableRoot>
+    </TableView.Root>
+  </TableView>
+  </ContentPage.Content>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Save" Priority="1" Order="Primary" Command="{Binding SaveLegoSet}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Save.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    
+  </ContentPage.ToolbarItems>
+</ContentPage>

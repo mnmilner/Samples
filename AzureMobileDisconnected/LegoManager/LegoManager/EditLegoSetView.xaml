@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LegoManager.EditLegoSetView">
+  <ContentPage.Content>
+
+
+    <TableView Intent="Form">
+      <TableView.Root>
+        <TableRoot Title="Edit set">
+          <TableSection Title="Set Details">
+            <EntryCell Label="Number:" Text="{Binding SetToEdit.LegoProductNumber}"></EntryCell>
+            <EntryCell Label="Name:" Text="{Binding SetToEdit.Name}"></EntryCell>
+            <EntryCell Label="# Pieces:" Text="{Binding SetToEdit.NumberOfPieces}"></EntryCell>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Release Date:"></Label>
+                  <DatePicker Date="{Binding SetToEdit.ReleaseDate}"></DatePicker>
+                </StackLayout>
+
+              </ViewCell.View>
+            </ViewCell>
+          </TableSection>
+          <TableSection Title="Personal Details">
+            <SwitchCell Text="Owned" On="{Binding SetToEdit.Owned}"></SwitchCell>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="Build Date:"></Label>
+                  <DatePicker Date="{Binding SetToEdit.BuildDate}"></DatePicker>
+                </StackLayout>
+
+              </ViewCell.View>
+            </ViewCell>
+          </TableSection>
+        </TableRoot>
+      </TableView.Root>
+    </TableView>
+  </ContentPage.Content>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Save" Priority="1" Order="Primary" Command="{Binding SaveLegoSet}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Save.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    <ToolbarItem Name="Delete" Priority="1" Order="Primary" Command="{Binding RemoveLegoSet}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Delete.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+</ContentPage>

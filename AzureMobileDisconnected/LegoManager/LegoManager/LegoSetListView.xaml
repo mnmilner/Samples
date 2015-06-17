@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LegoManager.LegoSetListView">
+  <ContentPage.Content>
+     <StackLayout Orientation="Vertical" VerticalOptions="Start">
+       <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" />
+
+      <ListView x:Name="legoList" ItemsSource="{Binding Items}" ItemTapped="LegoSet_Selected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding LegoProductNumber}" Detail="{Binding Name}" />
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+  </StackLayout>
+  </ContentPage.Content>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Add" Priority="1" Order="Primary" Command="{Binding AddLegoSet}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Add.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    <ToolbarItem Name="Sync" Priority="2" Order="Primary" Command="{Binding RefreshData}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Refresh.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+    <ToolbarItem Name="Purge" Priority="3" Order="Primary" Command="{Binding PurgeLocalData}" >
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+          <OnPlatform.WinPhone>/Toolkit.Content/ApplicationBar.Cancel.png</OnPlatform.WinPhone>
+        </OnPlatform>
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+</ContentPage>
